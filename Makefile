@@ -1,5 +1,5 @@
 setup:
-	python3 -m venv ~/.dockerproj
+	python3 -m venv ~/.dockertest
 
 install:
 	pip install --upgrade pip &&\
@@ -20,6 +20,6 @@ run-circleci-local:
 
 lint:
 	hadolint Dockerfile 
-	pylint --disable=R,C,W1203 app.py
+	pylint --disable=R,C,W1203,no-member,W0622 app.py
 
 all: install lint test
